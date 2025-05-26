@@ -1,0 +1,33 @@
+@use "./styles/variables" as vars;
+@use "./styles/mixins" as mix;
+
+* {
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.aviasales-app {
+  @include mix.apply-background-color;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+}
+
+.container {
+  @include mix.apply-block-color;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}

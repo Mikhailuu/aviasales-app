@@ -1,0 +1,54 @@
+@use "../../styles/mixins" as mix;
+
+.sort {
+  @include mix.apply-block-color;
+  width: 502px;
+  height: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.button {
+  flex: 1 1 0;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  border: 1px solid #dfe5ec;
+
+  border-radius: 0;
+  &:first-child {
+    border-radius: 5px;
+    border: 1px solid #dfe5ec;
+    border-right: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  &:last-child {
+    border-radius: 5px;
+    border: 1px solid #dfe5ec;
+    border-left: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &:focus {
+    @include mix.apply-btn-color;
+    @include mix.apply-text-color-white;
+    border-color: transparent;
+    color: white;
+  }
+
+  &:focus span {
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus .text-stroke {
+    paint-order: stroke fill;
+  }
+}

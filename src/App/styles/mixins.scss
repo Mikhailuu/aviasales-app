@@ -1,0 +1,21 @@
+@use "./variables.scss" as *;
+
+@mixin apply-background-color {
+  background-color: $background-color;
+}
+
+@mixin apply-block-color {
+  background-color: $block-color;
+}
+
+@mixin apply-btn-color {
+  background-color: $button-focused-color;
+}
+
+@mixin apply-text-color-white {
+  color: $text-color-white;
+}
+
+@mixin apply-box-shadow {
+  box-shadow: 0px 2px 8px 0px $box-shadow;
+}

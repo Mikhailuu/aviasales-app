@@ -1,0 +1,18 @@
+@use "../../styles/mixins" as mix;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.loadMore {
+  @include mix.apply-btn-color;
+  @include mix.apply-text-color-white;
+  width: 502px;
+  height: 50px;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
