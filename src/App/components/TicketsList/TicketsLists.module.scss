@@ -8,7 +8,7 @@
 }
 
 .load-more {
-  @include mix.apply-btn-color;
+  @include mix.apply-focused-color;
   @include mix.apply-text-color-white;
   width: 502px;
   height: 50px;
