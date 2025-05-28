@@ -1,3 +1,5 @@
+@use "../../styles/mixins.scss" as mix;
+
 .ticket {
   background: #ffffff;
   border-radius: 8px;
@@ -62,9 +64,9 @@
 }
 
 .segment-time {
+  @include mix.apply-text-color;
   font-weight: 600;
   font-size: 14px;
-  color: #4a4a4a;
 }
 
 .segment-label {
@@ -74,7 +76,7 @@
 }
 
 .segment-value {
+  @include mix.apply-text-color;
   font-size: 14px;
-  color: #4a4a4a;
   font-weight: 600;
 }

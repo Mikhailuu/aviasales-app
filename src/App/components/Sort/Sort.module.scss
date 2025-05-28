@@ -11,13 +11,13 @@
 }
 
 .button {
+  @include mix.apply-text-color;
   flex: 1 1 0;
   font-size: 12px;
   font-weight: 600;
   line-height: 20px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: #4a4a4a;
   border: 1px solid #dfe5ec;
 
   border-radius: 0;
@@ -38,7 +38,7 @@
   }
 
   &:focus {
-    @include mix.apply-btn-color;
+    @include mix.apply-focused-color;
     @include mix.apply-text-color-white;
     border-color: transparent;
     color: white;
@@ -51,4 +51,11 @@
   &:focus .text-stroke {
     paint-order: stroke fill;
   }
+}
+
+.button-active {
+  @include mix.apply-focused-color;
+  @include mix.apply-text-color-white;
+  border-color: transparent;
+  color: white;
 }

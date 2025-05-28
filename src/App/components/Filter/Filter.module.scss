@@ -3,9 +3,9 @@
 .filter {
   @include mix.apply-block-color;
   @include mix.apply-box-shadow;
+  @include mix.apply-text-color;
   width: 232px;
   height: 252px;
-  color: #4a4a4a;
 }
 
 .filter h6 {
@@ -41,10 +41,22 @@
 }
 
 .list input {
-  margin-right: 10px;
+  appearance: none;
   width: 20px;
   height: 20px;
+  border: 1px solid #9abbce;
+  border-radius: 2px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   cursor: pointer;
+  margin-right: 10px;
+
+  &:checked {
+    border-color: #2196f3;
+    background-image: url("../../assets/checked.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
 }
 
 .list label {

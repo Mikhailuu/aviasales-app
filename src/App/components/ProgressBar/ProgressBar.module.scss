@@ -1,0 +1,19 @@
+@use "../../styles/mixins.scss" as mix;
+
+.container {
+  width: 100%;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.label {
+  text-align: center;
+  font-size: 12px;
+}
+
+.progress {
+  @include mix.apply-focused-color;
+  height: 8px;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}

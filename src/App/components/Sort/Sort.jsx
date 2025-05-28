@@ -12,7 +12,13 @@ const Sort = () => {
 
   return (
     <div className={classes.sort}>
-      <button className={`${classes.button}`}>
+      <button
+        className={
+          sort === "price"
+            ? `${classes.button} ${classes["button-active"]}`
+            : classes.button
+        }
+      >
         <span
           className={sort === "price" ? classes["text-stroke"] : ""}
           onClick={() => handleSortChange("price")}
@@ -20,7 +26,13 @@ const Sort = () => {
           Самый дешевый
         </span>
       </button>
-      <button className={classes.button}>
+      <button
+        className={
+          sort === "duration"
+            ? `${classes.button} ${classes["button-active"]}`
+            : classes.button
+        }
+      >
         {" "}
         <span
           className={sort === "duration" ? classes["text-stroke"] : ""}
@@ -29,7 +41,13 @@ const Sort = () => {
           Самый быстрый
         </span>
       </button>
-      <button className={classes.button}>
+      <button
+        className={
+          sort === "optimal"
+            ? `${classes.button} ${classes["button-active"]}`
+            : classes.button
+        }
+      >
         {" "}
         <span
           className={sort === "optimal" ? classes["text-stroke"] : ""}

@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
+  position: relative;
 }
 
-.loadMore {
+.load-more {
   @include mix.apply-btn-color;
   @include mix.apply-text-color-white;
   width: 502px;
@@ -15,4 +16,10 @@
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 0.5px;
+}
+
+.progress {
+  width: 100%;
+  position: absolute;
+  top: -20px;
 }

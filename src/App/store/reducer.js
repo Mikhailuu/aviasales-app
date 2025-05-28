@@ -1,9 +1,12 @@
 import { combineReducers } from "redux";
 
-const initialIsLoading = false;
-const initialError = null;
-const initialStopFetching = false;
-const initialTicketState = [];
+const initialTicketState = {
+  tickets: [],
+  isLoading: false,
+  isComplete: false,
+  progress: 0,
+  error: null,
+};
 const initialFiltersState = {
   all: true,
   nonStop: true,
@@ -13,37 +16,37 @@ const initialFiltersState = {
 };
 const initialSortState = "price";
 
-const isLoadingReducer = (state = initialIsLoading, action) => {
-  switch (action.type) {
-    case "SET_LOADING":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-const errorReducer = (state = initialError, action) => {
-  switch (action.type) {
-    case "SET_ERROR":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-const stopFetchingReducer = (state = initialStopFetching, action) => {
-  switch (action.type) {
-    case "SET_STOP_FETCHING":
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
 const ticketsReducer = (state = initialTicketState, action) => {
   switch (action.type) {
-    case "SET_TICKETS":
-      return action.payload;
+    case "FETCH_TICKETS-START":
+      return {
+        ...state,
+        isLoading: true,
+        error: null,
+      };
+    case "FETCH_TICKETS_CHUNK":
+      return {
+        ...state,
+        tickets: [...state.tickets, ...action.payload],
+        isLoading: false,
+      };
+    case "UPDATE_PROGRESS":
+      return {
+        ...state,
+        progress: action.payload,
+      };
+    case "FETCH_TICKETS_COMPLETE":
+      return {
+        ...state,
+        isComplete: true,
+        isLoading: false,
+      };
+    case "FETCH_TICKETS_ERROR":
+      return {
+        ...state,
+        isLoading: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
@@ -74,9 +77,6 @@ const rootReducer = combineReducers({
   tickets: ticketsReducer,
   filters: filtersReducer,
   sort: sortReducer,
-  isLoading: isLoadingReducer,
-  error: errorReducer,
-  stopFetching: stopFetchingReducer,
 });
 
 export default rootReducer;

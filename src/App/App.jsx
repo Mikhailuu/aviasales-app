@@ -7,8 +7,6 @@ import Header from "./components/Header";
 import Filter from "./components/Filter";
 import Sort from "./components/Sort";
 
-let count = 0;
-
 function App() {
   return (
     <Provider store={store}>
@@ -18,7 +16,7 @@ function App() {
           <Filter />
           <main className={"main"}>
             <Sort />
-            <TicketsList count={count} />
+            <TicketsList />
           </main>
         </div>
       </div>
