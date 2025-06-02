@@ -12,7 +12,7 @@ const initialFiltersState = {
   nonStop: true,
   oneStop: true,
   twoStop: true,
-  treeStop: true,
+  threeStop: true,
 };
 const initialSortState = "price";
 
